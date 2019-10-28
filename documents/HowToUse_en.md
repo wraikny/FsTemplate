@@ -8,7 +8,7 @@
     $ git remote add <your repogitory>
     ```
 2. change url of [CI Badge in README.md](/README.md#L1)
-3. Following [CreateNewProject](##CreateNewProject), create new project.
+3. Following [CreateNewProject](#CreateNewProject), create new project.
 
 ## Requirement
 .NET Core SDK  
@@ -41,18 +41,18 @@ dotnet run --project src/SampleApp
 
 ## Package Manager
 Using [Paket](https://fsprojects.github.io/Paket/index.html).  
-Write dependencies in [paket.dependencies](paket.dependencies).  
+Write dependencies in [paket.dependencies](/paket.dependencies).  
 If you updated it, execute
 ```shell
 $ ./paket.sh install
 ```
 
-In each project, write [paket.references](src/SampleApp/paket.references).
-By the way, [paket.exe](.paket/paket.exe) is Magic Mode.
+In each project, write [paket.references](/src/SampleApp/paket.references).
+By the way, [paket.exe](/.paket/paket.exe) is Magic Mode.
 
 ## Build script
 Using [FAKE](https://fake.build/).  
-Script in [build.fsx](build.fsx).
+Script in [build.fsx](/build.fsx).
 Set Target as
 ```shell
 $ ./fake.sh -t "Clean"
@@ -64,7 +64,7 @@ $ dotnet new console -lang=F# -o src/SampleApp # Library: not consle but classli
 $ echo 'FSharp.Core' > src/SampleApp
 ```
 
-Add bellow to `*.fsproj`, with reference to [SampleApp.fsproj](src/SampleApp.fsproj),
+Add bellow to `*.fsproj`, with reference to [SampleApp.fsproj](/src/SampleApp.fsproj),
 ```xml
 <Import Project="..\..\.paket\Paket.Restore.targets" />
 ```
