@@ -21,7 +21,7 @@ $ ./paket.sh restore
 
 ## Build
 ```shell
-$ fake.sh build
+$ ./fake.sh build
 ```
 
 ## Run
