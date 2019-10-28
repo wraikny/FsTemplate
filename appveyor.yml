@@ -1,6 +1,8 @@
 # appveyor file
 # http://www.appveyor.com/docs/appveyor-yml
 
+image: Previous Visual Studio 2019
+
 branches:
   only:
     - master
@@ -10,13 +12,8 @@ version: 0.0.1.{build}
 init:
   - git config --global core.autocrlf false
 
-install:
-  - cmd: choco install dotnetcore-sdk -y
-
 build_script:
   - cmd: build.cmd
 
 test_script:
   - dotnet fake build -t Test
-
-build: off

@@ -21,6 +21,7 @@ Template for F# project, distributed under [MIT License](/LICENSE)
 ---|---
 |Github Actions|[![](https://github.com/wraikny/FsTemplate/workflows/CI/badge.svg)](https://github.com/wraikny/FsTemplate/actions?workflow=CI)|
 |Travis CI|[![](https://travis-ci.org/wraikny/FsTemplate.svg?branch=master)](https://travis-ci.org/wraikny/FsTemplate)|
+|AppVeyor|[![](https://ci.appveyor.com/api/projects/status/5vtyb8v9twdpteb6?svg=true)](https://ci.appveyor.com/project/wraikny/FsTemplate)|
 
 ## Requirements
 .NET Core 3.0  
