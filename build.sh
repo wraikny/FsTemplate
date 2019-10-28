@@ -1,10 +1,4 @@
 #!/usr/bin/env bash
 
-if test "$OS" = "Windows_NT"
-then
-    .paket/paket.exe restore
-else
-    mono .paket/paket.exe restore
-fi
-
+./paket.sh restore
 ./fake.sh run build.fsx $@
