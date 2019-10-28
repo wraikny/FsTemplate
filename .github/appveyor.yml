@@ -1,8 +1,11 @@
-image: Visual Studio 2019
+# appveyor file
+# http://www.appveyor.com/docs/appveyor-yml
 
 branches:
   only:
     - master
+
+version: 0.0.1.{build}
 
 init:
   - git config --global core.autocrlf false
@@ -15,3 +18,5 @@ build_script:
 
 test_script:
   - dotnet fake build -t Test
+
+build: off
