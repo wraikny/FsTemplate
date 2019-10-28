@@ -1,0 +1,17 @@
+image: Visual Studio 2019
+
+branches:
+  only:
+    - master
+
+init:
+  - git config --global core.autocrlf false
+
+install:
+  - cmd: choco install dotnetcore-sdk -y
+
+build_script:
+  - cmd: build.cmd
+
+test_script:
+  - dotnet fake build -t Test

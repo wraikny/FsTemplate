@@ -2,7 +2,5 @@
 language: csharp
 dotnet: 3.0.100
 script:
-  - dotnet tool restore
-  - dotnet paket restore
-  - dotnet fake build
+  - ./build.sh
   - dotnet fake build -t Test
