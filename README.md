@@ -40,7 +40,7 @@ $ dotnet fake build
 
 ## Run
 ```shell
-$ dotnet run --project src/SampleApp
+$ dotnet run --project src/SampleApp [-c {Debug|Release}]
 ```
 
 ## Tests
