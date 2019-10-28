@@ -1,11 +1,4 @@
 cd /d %~dp0
-
-.paket\paket.exe restore
-
-SET TOOL_PATH=.fake
-
-IF NOT EXIST "%TOOL_PATH%\fake.exe" (
-  dotnet tool install fake-cli --tool-path ./%TOOL_PATH%
-)
-
-"%TOOL_PATH%\fake.exe" run build.fsx %*
+dotnet tool restore
+dotnet paket restore
+dotnet fake run build.fsx %*
