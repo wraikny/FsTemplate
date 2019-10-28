@@ -35,5 +35,5 @@ jobs:
         DOTNET_ROOT: ${{ runner.tool_cache }}/dncs/${{ matrix.dotnet }}/x64
         CI: true
 
-    # - name: Test
-    #   run: dotnet run --project tests/Affogato.Test
+    - name: Test
+      run: dotnet fake build -t Test
