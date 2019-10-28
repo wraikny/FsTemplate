@@ -12,6 +12,7 @@ Template for F# project, distributed under [MIT License](/LICENSE)
 2. Replace **CI Badge** in **[README.md](/README.md)**
     ```md
     'wraikny/FsTemplate' to '<OWNER>/<REPOSITORY>'
+    (AppVeyor badge uses unique project ID)
    ```
 
 3. Create project: **[Create Project](#Create-Project)**
