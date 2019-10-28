@@ -18,11 +18,14 @@ let testProjects = [
 ]
 
 Target.create "Test" (fun _ ->
-  seq {
-    for x in testProjects ->
-      !! (sprintf "tests/%s/bin/Release/**/%s.dll" x x)
-  }
-  |> Seq.iter (Expecto.run id)
+  [ for x in testProjects ->
+      sprintf "tests/%s/bin/Release/**/%s.dll" x x
+  ] |> function
+  | [] ->
+    printfn "There is no test project"
+  | x::xs ->
+    Seq.fold (++) (!! x) xs
+    |> Expecto.run id
 )
 
 Target.create "Clean" (fun _ ->

@@ -1,6 +1,6 @@
 [![Github Actions CI Status](https://github.com/wraikny/FsTemplate/workflows/CI/badge.svg)](https://github.com/wraikny/FsTemplate/actions?workflow=CI)
 # FsTemplate
-Template for F# project
+Template for F# project, distributed under [MIT License](/LICENSE)
 
 ## Use
 1. **Clone** and change **remote repogitory**
@@ -46,6 +46,10 @@ $ dotnet run --project src/SampleApp
 ## Tests
 ```shell
 $ dotnet fake build -t Test
+```
+OR
+```
+$ dotnet run --project tests/SampleTest
 ```
 
 ## [Paket](https://fsprojects.github.io/Paket/index.html)  
