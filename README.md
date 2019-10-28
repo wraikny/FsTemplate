@@ -15,7 +15,7 @@ Template for F# project
    ![](https://github.com/<username>/<projectname>/workflows/CI/badge.svg)
    ```
 
-3. Create new project, following to [Create New Project](##Create%sNew%sProject)
+3. Create new project following to [Create New Project](#Create-New-Project)
 
 ## Requirements
 .NET Core SDK 3.0  
