@@ -1,0 +1,9 @@
+
+language: csharp
+dotnet: 3.0.100
+mono: none
+script:
+  - dotnet tool restore
+  - dotnet paket restore
+  - dotnet fake build
+  - dotnet fake build -t Test
