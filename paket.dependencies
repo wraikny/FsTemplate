@@ -1,0 +1,16 @@
+version 5.226.0
+
+source https://www.nuget.org/api/v2
+
+nuget FSharp.Core
+
+// [ FAKE GROUP ]
+group Build
+    storage none
+    source https://api.nuget.org/v3/index.json
+nuget FAKE
+    nuget Fake.DotNet.Cli
+    nuget Fake.IO.FileSystem
+    nuget Fake.Core.Target
+    nuget Fake.Core.ReleaseNotes
+    nuget Fake.DotNet.AssemblyInfoFile
