@@ -39,6 +39,7 @@ $ ./paket.sh install
 を実行する。
 
 プロジェクトごとに [paket.references](src/SampleApp/paket.references) を記述する。
+ちなみに、[paket.exe](.paket/paket.exe)はMagic Modeです。
 
 ## Build Script
 [FAKE](https://fake.build/) を使用する。
@@ -47,3 +48,6 @@ $ ./paket.sh install
 $ ./fake.sh -t "Clean"
 ```
 でTargetを指定する
+
+## Link
+- [Paket（.NETのパッケージマネージャー）とFAKE（F#のMake）について - anti scroll](https://tategakibunko.hatenablog.com/entry/2019/07/09/123655)
