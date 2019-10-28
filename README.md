@@ -1,4 +1,3 @@
-[![Github Actions CI Status](https://github.com/wraikny/FsTemplate/workflows/CI/badge.svg)](https://github.com/wraikny/FsTemplate/actions?workflow=CI)
 # FsTemplate
 Template for F# project, distributed under [MIT License](/LICENSE)
 
@@ -10,13 +9,18 @@ Template for F# project, distributed under [MIT License](/LICENSE)
     $ git remote add origin <your repogitory>
     ```
 
-2. Change **CI Badge** in **[README.md](/README.md)**
-   ```md
-   - badge: https://github.com/<OWNER>/<REPOSITORY>/workflows/CI/badge.svg
-   - link: https://github.com/<OWNER>/<REPOSITORY>/actions?workflow=CI
+2. Replace **CI Badge** in **[README.md](/README.md)**
+    ```md
+    'wraikny/FsTemplate' to '<OWNER>/<REPOSITORY>'
    ```
 
 3. Create project: **[Create Project](#Create-Project)**
+
+## CI
+|||
+---|---
+|Github Actions|[![](https://github.com/wraikny/FsTemplate/workflows/CI/badge.svg)](https://github.com/wraikny/FsTemplate/actions?workflow=CI)|
+|Travis CI|[![](https://travis-ci.org/wraikny/FsTemplate.svg?branch=master)](https://travis-ci.org/wraikny/FsTemplate)|
 
 ## Requirements
 .NET Core 3.0  
