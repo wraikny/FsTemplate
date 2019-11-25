@@ -1,21 +1,20 @@
 # FsTemplate
 Template for F# project, distributed under [MIT License](/LICENSE)
 
-## Use
-1. **Clone** and change **remote repogitory**
+## Usage
+1. Click the above [**Use this Template**] button.
+2. **Clone** your regository
     ```shell
-    $ git clone git@github.com:wraikny/FsTemplate.git
-    $ git remote rm origin
-    $ git remote add origin <your repository>
+    $ git clone git@github.com:<OWNER>/<REPOSITORY>.git
     ```
 
-2. Change **CI Badge** in **[README.md](/README.md)**
+3. Change **CI Badge** in **[README.md](/README.md)**
     - Replace `wraikny/FsTemplate` to `<OWNER>/<REPOSITORY>`
     - Set your own AppVeyor badge ID
     - **If you don't use a CI service, comment out it from the below table**.
 
 
-3. Create project: **[Create Project](#Create-Project)**
+4. Create project: **[Create Project](#Create-Project)**
 
 ## CI Status
 |||
