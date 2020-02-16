@@ -28,6 +28,19 @@ Target.create "Test" (fun _ ->
     |> Expecto.run id
 )
 
+let dotnet cmd arg = DotNet.exec id cmd arg |> ignore
+
+Target.create "Tool" (fun _ ->
+  dotnet "tool" "update paket"
+  dotnet "tool" "update fake-cli"
+)
+
+Target.create "Setup" (fun _ ->
+  dotnet "paket" "update"
+  Directory.delete "src/SampleApp"
+  Directory.delete "tests/SampleTest"
+)
+
 Target.create "Clean" (fun _ ->
   !! "src/**/bin"
   ++ "src/**/obj"
@@ -47,5 +60,8 @@ Target.create "All" ignore
 "Clean"
   ==> "Build"
   ==> "All"
+
+"Tool"
+  ==> "Setup"
 
 Target.runOrDefault "All"

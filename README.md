@@ -1,20 +1,31 @@
 # FsTemplate
 Template for F# project, distributed under [MIT License](/LICENSE)
 
-## Usage
-1. Click the above [**Use this Template**] button.
-2. **Clone** your regository
+## FsTemplate Usage
+1. Click the above [**Use this Template**] button in GitHub website.
+
+2. **Clone** your project
     ```shell
-    $ git clone git@github.com:<OWNER>/<REPOSITORY>.git
+    $ git clone <URL>
+    $ cd <ProjectName>
+    ```
+3. **Setup** Template
+    ```shell
+    $ dotnet tool restore
+    $ dotnet fake build -t Setup # update tools and dependencies, remove sample projects
     ```
 
-3. Change **CI Badge** in **[README.md](/README.md)**
-    - Replace `wraikny/FsTemplate` to `<OWNER>/<REPOSITORY>`
+4. Change **CI Badges** in **[README.md](/README.md)**
+    - Replace `wraikny/FsTemplate` to `<OWNER>/<REPO>`
     - Set your own AppVeyor badge ID
     - **If you don't use a CI service, comment out it from the below table**.
+5. Create Your project: **[Create Project](#Create-Project)**
+6. Remove this **[FsTemplate Usage](#FsTemplate-Usage)** from here
+7.
+    ```shell
+    $ git commit --amend # as initial commit
+    ```
 
-
-4. Create project: **[Create Project](#Create-Project)**
 
 ## CI Status
 |||
@@ -36,40 +47,47 @@ $ dotnet --version
 3.0.100
 ```
 
-## Restoring after Clone
+## CLI
+
+### Restoring after Clone
 ```shell
 $ dotnet tool restore
-$ dotnet paket restore
 ```
 
-## Build
+### Build
 ```shell
-$ dotnet fake build
+$ dotnet fake build # Build all projects as Release
+$ # or
+$ dotnet build --project src/SampleApp [-c {Debug|Release}]
 ```
 
-## Run
+### Run
 ```shell
 $ dotnet run --project src/SampleApp [-c {Debug|Release}]
 ```
 
-## Tests
+### Tests
 ```shell
 $ dotnet fake build -t Test
-```
-OR
-```
+$ #or
 $ dotnet run --project tests/SampleTest
 ```
 
-## [Paket](https://fsprojects.github.io/Paket/index.html)  
-Each project needs: [paket.references](/src/SampleApp/paket.references) file.
+## References
+### [Paket](https://fsprojects.github.io/Paket/index.html)  
+Each project requires `paket.references` file.
 
 After updating [paket.dependencies](/paket.dependencies):
 ```shell
 $ dotnet paket install
 ```
 
-## [FAKE](https://fake.build/)  
+To Update Versions of Libraries,
+```shell
+$ dotnet paket update
+```
+
+### [FAKE](https://fake.build/)  
 Scripting at [build.fsx](/build.fsx).  
 
 ```shell
@@ -77,18 +95,20 @@ $ dotnet fake build -t Clean # Run "Clean" Target
 $ dotnet fake build # Run Default Taret
 ```
 
-## Create Project
+### Create Project
 ```shell
-$ dotnet new console -lang=f# -o src/SampleApp # Application
+$ # Application
+$ dotnet new console -lang=f# -o src/SampleApp
 $ echo 'FSharp.Core' > src/SampleApp/paket.references
+$ paket install
 
-$ dotnet new classlib -lang=f# -o src/SampleLib # Library
+$ # Library
+$ dotnet new classlib -lang=f# -o src/SampleLib
 $ echo 'FSharp.Core' > src/SampleLib/paket.references
-
-$ paket install # Add reference of Paket to .fsproj file
+$ paket install
 ```
 
-## Create Test Project
+### Create Test Project
 ```shell
 $ dotnet new console -lang=f# -o tests/SampleTest
 $ echo -e 'FSharp.Core\nExpecto\nExpecto.FsCheck' > tests/SampleTest/paket.references
@@ -97,17 +117,16 @@ $ paket install # Add reference of Paket to .fsproj file
 ```
 and then, Add **Project Name** to [build.fsx](/build.fsx).
 
-## Solution
+### Create Solution
 ```shell
-$ dotnet new sln # Create Solution File
+$ dotnet new sln
 $ dotnet sln add src/SampleApp
 $ dotnet sln add src/SampleLib
 ```
 
-## Tool Update
+### Update Tool
 ```shell
-$ dotnet tool update fake-cli
-$ dotnet tool update paket
+$ dotnet fake build -t Tool
 ```
 and then, commit [.config/dotnet-tools.json](/.config/dotnet-tools.json).
 
