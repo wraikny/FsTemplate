@@ -23,6 +23,7 @@ Template for F# project, distributed under [MIT License](/LICENSE)
 6. Remove this **[FsTemplate Usage](#FsTemplate-Usage)** from here
 7.
     ```shell
+    $ git add --all
     $ git commit --amend # as initial commit
     ```
 
@@ -39,12 +40,12 @@ comment out in Markdown.
 --->
 
 ## Requirements
-.NET Core 3.0  
+.NET Core 3.1  
 https://dotnet.microsoft.com/download  
 
 ```shell
 $ dotnet --version
-3.0.100
+3.1.201
 ```
 
 ## CLI
