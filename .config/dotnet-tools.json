@@ -7,12 +7,6 @@
       "commands": [
         "fake"
       ]
-    },
-    "paket": {
-      "version": "5.245.2",
-      "commands": [
-        "paket"
-      ]
     }
   }
 }

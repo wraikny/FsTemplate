@@ -22,7 +22,6 @@ jobs:
     - name: Build
       run: |
         dotnet tool restore
-        dotnet paket restore
         dotnet fake build
       env:
         CI: true

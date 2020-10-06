@@ -75,19 +75,6 @@ $ dotnet run --project tests/SampleTest
 ```
 
 ## References
-### [Paket](https://fsprojects.github.io/Paket/index.html)  
-Each project requires `paket.references` file.
-
-After updating [paket.dependencies](/paket.dependencies):
-```shell
-$ dotnet paket install
-```
-
-To Update Versions of Libraries,
-```shell
-$ dotnet paket update
-```
-
 ### [FAKE](https://fake.build/)  
 Scripting at [build.fsx](/build.fsx).  
 
@@ -100,21 +87,18 @@ $ dotnet fake build # Run Default Taret
 ```shell
 $ # Application
 $ dotnet new console -lang=f# -o src/SampleApp
-$ echo 'FSharp.Core' > src/SampleApp/paket.references
-$ paket install
 
 $ # Library
 $ dotnet new classlib -lang=f# -o src/SampleLib
-$ echo 'FSharp.Core' > src/SampleLib/paket.references
-$ paket install
 ```
 
 ### Create Test Project
 ```shell
 $ dotnet new console -lang=f# -o tests/SampleTest
-$ echo -e 'FSharp.Core\nExpecto\nExpecto.FsCheck' > tests/SampleTest/paket.references
+$ cd tests/SampleTest
+$ dotnet add package Expecto
+$ dotnet add package Expecto.FsCheck
 
-$ paket install # Add reference of Paket to .fsproj file
 ```
 and then, Add **Project Name** to [build.fsx](/build.fsx).
 
