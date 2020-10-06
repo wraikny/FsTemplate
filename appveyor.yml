@@ -12,10 +12,11 @@ version: 0.0.1.{build}
 init:
   - git config --global core.autocrlf false
 
+before_build:
+  - cmd: dotnet tool restore
+
 build_script:
-  - cmd: >-
-      dotnet tool restore
-      dotnet fake build
+  - cmd: dotnet fake build
 
 test_script:
   - dotnet fake build -t Test
